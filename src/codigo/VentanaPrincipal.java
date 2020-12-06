@@ -385,7 +385,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             this.jButtonMostrarPost.setEnabled(true);
             this.jButtonLike.setEnabled(true);
             this.jButtonPublicar.setEnabled(true);
-            this.jComboBoxId.removeAllItems();
             annadirElementosEnCombobox();            
         }
 
@@ -567,10 +566,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if (gesDOM.preparar_DOM(ficheroXML) == -1) {
                 this.jLabelMensajeConexion.setText("Error en conexión con base de datos.");
             } else {
-                int numeroPosts = gesDOM.contarPosts()+1;
+                this.jComboBoxId.removeAllItems();
+                int numeroPosts = gesDOM.contarPosts();
                 for (int i = 1; i <= numeroPosts; i++) {
                     this.jComboBoxId.addItem(String.valueOf(i));
-                    numeroPosts--;
                 }
             }
     }

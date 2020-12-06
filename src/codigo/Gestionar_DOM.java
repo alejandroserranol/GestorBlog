@@ -59,7 +59,7 @@ public class Gestionar_DOM {
         NodeList listaPosts = raiz.getChildNodes();
 
         for (int i = 0; i < listaPosts.getLength(); i++) {
-            if (listaPosts.item(i).getNodeType() == Node.ELEMENT_NODE) {
+            if (listaPosts.item(i).getNodeType() == Node.ELEMENT_NODE && listaPosts.item(i).getNodeName().equals("Post")) {
                 numeroPosts++;
             }
         }
