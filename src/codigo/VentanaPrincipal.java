@@ -12,11 +12,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
- * @author aleja
+ * @author Alejandro Serrano Loredo
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-    
-    Gestionar_SAX gesSAX = new Gestionar_SAX(); 
+
+    Gestionar_SAX gesSAX = new Gestionar_SAX();
+    Gestionar_XPath gesXPath = new Gestionar_XPath();
+
+    File ficheroXML = null;
 
     /**
      * Creates new form VentanaPrincipal
@@ -34,99 +37,187 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelMensajeConexon = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaSalida = new javax.swing.JTextArea();
-        jButtonMostrarSax = new javax.swing.JButton();
-        jLabelMensaje = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItemConectar = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jButtonMostrarSAX = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jButtonMostrarPost = new javax.swing.JButton();
+        jLabelMensajeConsulta = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextAreaConsulta = new javax.swing.JTextArea();
+        jComboBoxId = new javax.swing.JComboBox<>();
+        jButtonConectarSAX = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagenes/blog.png")).getImage()
+        );
 
         jTextAreaSalida.setColumns(20);
         jTextAreaSalida.setRows(5);
         jScrollPane1.setViewportView(jTextAreaSalida);
 
-        jButtonMostrarSax.setText("Mostrar");
-        jButtonMostrarSax.setEnabled(false);
-        jButtonMostrarSax.addActionListener(new java.awt.event.ActionListener() {
+        jButtonMostrarSAX.setText("Mostrar");
+        jButtonMostrarSAX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMostrarSaxActionPerformed(evt);
+                jButtonMostrarSAXActionPerformed(evt);
             }
         });
 
-        jMenu1.setText("File");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButtonMostrarSAX)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelMensajeConexon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelMensajeConexon, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButtonMostrarSAX)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
-        jMenuItemConectar.setText("Conectar BBDD");
-        jMenuItemConectar.addActionListener(new java.awt.event.ActionListener() {
+        jTabbedPane1.addTab("Home", jPanel1);
+
+        jButtonMostrarPost.setText("Mostrar Post");
+        jButtonMostrarPost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemConectarActionPerformed(evt);
+                jButtonMostrarPostActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItemConectar);
 
-        jMenuBar1.add(jMenu1);
+        jTextAreaConsulta.setColumns(20);
+        jTextAreaConsulta.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaConsulta);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        jComboBoxId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
 
-        setJMenuBar(jMenuBar1);
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButtonMostrarPost)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBoxId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(117, 117, 117)
+                        .addComponent(jLabelMensajeConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelMensajeConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonMostrarPost)
+                            .addComponent(jComboBoxId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Consultas", jPanel2);
+
+        jButtonConectarSAX.setText("Conectar con base de datos");
+        jButtonConectarSAX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConectarSAXActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 930, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonMostrarSax)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap()
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 936, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(394, 394, 394)
+                        .addComponent(jButtonConectarSAX)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonMostrarSax, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
+                .addComponent(jButtonConectarSAX)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItemConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConectarActionPerformed
-        
-        File ficheroXML = null;
-        ficheroXML = dialogoSeleccionarFichero();
-        
-        if(ficheroXML == null){
-            this.jLabelMensaje.setText("Fichero no seleccionado.");
+    private void jButtonConectarSAXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConectarSAXActionPerformed
+
+        if (ficheroXML == null) {
+            ficheroXML = dialogoSeleccionarFichero();
+        }
+
+    }//GEN-LAST:event_jButtonConectarSAXActionPerformed
+
+    private void jButtonMostrarSAXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarSAXActionPerformed
+
+        if (ficheroXML == null) {
+            this.jLabelMensajeConexon.setText("Fichero no seleccionado.");
         } else {
-            if(gesSAX.abrir_XML_SAX(ficheroXML)==-1){
-                this.jLabelMensaje.setText("Error al crear el objeto SAX.");
-                this.jButtonMostrarSax.setEnabled(false);
+            if (gesSAX.abrir_XML_SAX(ficheroXML) == -1) {
+                this.jLabelMensajeConexon.setText("Error en conexión con base de datos.");
             } else {
-                this.jLabelMensaje.setText("¡Objeto JAXB creado!");
-                this.jButtonMostrarSax.setEnabled(true);
+                this.jLabelMensajeConexon.setText("¡Conexión establecida correctamente!");
+            }
+        }
+
+        this.jTextAreaSalida.setText(gesSAX.recorrerSAX());
+
+    }//GEN-LAST:event_jButtonMostrarSAXActionPerformed
+
+    private void jButtonMostrarPostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarPostActionPerformed
+        
+        if (ficheroXML == null) {
+            this.jLabelMensajeConexon.setText("Fichero no seleccionado.");
+        } else {
+            if (gesXPath.abrir_XML_XPath(ficheroXML) == -1) {
+                this.jLabelMensajeConsulta.setText("Error en conexión con base de datos.");
+            } else {
+                this.jLabelMensajeConsulta.setText("¡Conexión establecida correctamente!");
             }
         }
         
-    }//GEN-LAST:event_jMenuItemConectarActionPerformed
-
-    private void jButtonMostrarSaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarSaxActionPerformed
+        String consultaPost = "/Blog/Post[./@id=" + String.valueOf(jComboBoxId.getSelectedItem()) +"]";
         
-        this.jTextAreaSalida.setText(gesSAX.recorrerSAX());
+        this.jTextAreaConsulta.setText(gesXPath.ejecutar_XPath(consultaPost));
         
-    }//GEN-LAST:event_jButtonMostrarSaxActionPerformed
+    }//GEN-LAST:event_jButtonMostrarPostActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,20 +255,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonMostrarSax;
-    private javax.swing.JLabel jLabelMensaje;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItemConectar;
+    private javax.swing.JButton jButtonConectarSAX;
+    private javax.swing.JButton jButtonMostrarPost;
+    private javax.swing.JButton jButtonMostrarSAX;
+    private javax.swing.JComboBox<String> jComboBoxId;
+    private javax.swing.JLabel jLabelMensajeConexon;
+    private javax.swing.JLabel jLabelMensajeConsulta;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextAreaConsulta;
     private javax.swing.JTextArea jTextAreaSalida;
     // End of variables declaration//GEN-END:variables
 
     private File dialogoSeleccionarFichero() {
-        
+
         File fichero = null;
-        
+
         try {
             JFileChooser fco = new JFileChooser();
 
@@ -195,9 +291,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 String extension = nombre.substring(nombre.lastIndexOf('.') + 1, nombre.length());
 
                 if (!extension.equalsIgnoreCase("xml")) {
-                    
+
                     JOptionPane.showConfirmDialog(null, "Estensión seleccionada no válida.", "", JOptionPane.PLAIN_MESSAGE);
-                
+
                 } else {
                     return fichero;
                 }
