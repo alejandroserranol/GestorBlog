@@ -170,11 +170,13 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButtonMostrarPost" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBoxId" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabelMensajeRevision" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="jButtonLike" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jButtonMostrarPost" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBoxId" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonLike" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="341" max="-2" attributes="0"/>
