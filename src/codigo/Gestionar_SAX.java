@@ -23,7 +23,7 @@ public class Gestionar_SAX {
     ManejadorSAX sh;
     File ficheroXML;
 
-    int abrir_XML_SAX(File _fichero) {
+    int preparar_SAX(File _fichero) {
 
         try {
             //Se crea un objeto SAXParser para interpretar el documentoXML.

@@ -25,7 +25,7 @@ public class Gestionar_XPath {
     Document doc;
     XPath xpath;
 
-    public int abrir_XML_XPath(File _fichero) {
+    public int preparar_XPath(File _fichero) {
 
         //doc representará el árbol DOM.
         doc = null;
