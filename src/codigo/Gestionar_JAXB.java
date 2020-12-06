@@ -17,57 +17,64 @@ import javax.xml.bind.Unmarshaller;
  * @author Alejandro Serrano Loredo
  */
 public class Gestionar_JAXB {
-    
+
     Blog miBlog;
 
     public int preparar_JAXB(File _fichero) {
-        
-        try{
+
+        try {
             //Crea una instancia JAXB.
             JAXBContext contexto = JAXBContext.newInstance(Blog.class);
             //Crea un objeto Unmarshaller.
             Unmarshaller u = contexto.createUnmarshaller();
             //Deserializa (unmarshal el fichero).
             miBlog = (Blog) u.unmarshal(_fichero);
-            
+
             return 0;
-        } catch(Exception e){
+        } catch (Exception e) {
             return -1;
         }
-        
+
     }
 
     public int annadirLike(String _idPost, File _fichero) {
-        
+
         try {
             List<Blog.Post> listaPosts = miBlog.getPost();
-            
-            for(int i=0; i<listaPosts.size(); i++){
-                
-                if(listaPosts.get(i).getId().equals(_idPost)){
+
+            for (int i = 0; i < listaPosts.size(); i++) {
+
+                if (listaPosts.get(i).getId().equals(_idPost)) {
                     int numeroLikes = Integer.parseInt(listaPosts.get(i).getLikes());
                     numeroLikes++;
                     listaPosts.get(i).setLikes(String.valueOf(numeroLikes));
                 }
             }
-            
-            JAXBContext contexto = JAXBContext.newInstance(Blog.class);
-            
-            Marshaller m = contexto.createMarshaller();
-            
-            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            
-            m.marshal(miBlog, _fichero);
-            
-            
-            
-            return 0;            
+
+            serializar_JAXB(miBlog, _fichero);
+
+            return 0;
         } catch (Exception e) {
             return -1;
         }
-        
-    }
-    
 
-    
+    }
+
+    private void serializar_JAXB(Blog _miBlog, File _fichero) {
+
+        try {
+            //Crea una instancia JAXB.
+            JAXBContext contexto = JAXBContext.newInstance(Blog.class);
+            //Crea un objeto Marshaller.
+            Marshaller m = contexto.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            //Serializa (marshal el fichero).
+            m.marshal(miBlog, _fichero);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
+
 }

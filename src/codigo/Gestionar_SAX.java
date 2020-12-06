@@ -78,31 +78,29 @@ class ManejadorSAX extends DefaultHandler {
         } else if (qName.equals("Usuario")) {
             cadena_resultado = cadena_resultado + "\nUsuario: "
                     + attributes.getValue(attributes.getQName(0));
-            cadena_resultado = cadena_resultado + "\tNumero_mensajes: "
-                    + attributes.getValue(attributes.getQName(1));
             cadena_resultado = cadena_resultado + "\n\nDatos personales:";
         } else if (qName.equals("Nombre")) {
-            cadena_resultado = cadena_resultado + "\n\tNombre:\t";
+            cadena_resultado = cadena_resultado + "\tNombre:\t";
         } else if (qName.equals("Apellido")) {
-            cadena_resultado = cadena_resultado + "\n\tApellido:\t";
+            cadena_resultado = cadena_resultado + "\tApellido:\t";
         } else if (qName.equals("RedesSociales")) {
             cadena_resultado = cadena_resultado + "\n\tRedes sociales:\t";
         } else if (qName.equals("Linkedin")) {
-            cadena_resultado = cadena_resultado + "\n\t\tLinkedin:\t";
+            cadena_resultado = cadena_resultado + "\t\tLinkedin:\t";
         } else if (qName.equals("Github")) {
-            cadena_resultado = cadena_resultado + "\n\t\tGithub:\t";
+            cadena_resultado = cadena_resultado + "\t\tGithub:\t";
         } else if (qName.equals("DatosContacto")) {
             cadena_resultado = cadena_resultado + "\n\tDatos de contacto:\t";
         } else if (qName.equals("Email")) {
-            cadena_resultado = cadena_resultado + "\n\t\tEmail:\t";
+            cadena_resultado = cadena_resultado + "\t\tEmail:\t";
         } else if (qName.equals("Telefono")) {
-            cadena_resultado = cadena_resultado + "\n\t\tTelefono:\t";
+            cadena_resultado = cadena_resultado + "\t\tTelefono:\t";
         } else if (qName.equals("Direccion")) {
-            cadena_resultado = cadena_resultado + "\n\t\tDireccion\t";
+            cadena_resultado = cadena_resultado + "\t\tDireccion\t";
         } else if (qName.equals("Titulo")) {
-            cadena_resultado = cadena_resultado + "\nTitulo:\t";
+            cadena_resultado = cadena_resultado + "Titulo:\t";
         } else if (qName.equals("Texto")) {
-            cadena_resultado = cadena_resultado + "\nTexto:\t";
+            cadena_resultado = cadena_resultado + "Texto:\t";
         }
 
     }

@@ -29,8 +29,7 @@
 												</xsd:complexType>
 											</xsd:element>
 										</xsd:sequence>
-										<xsd:attribute name="alias" type="xsd:string"/>
-										<xsd:attribute name="numero_mensajes" type="xsd:string"/>
+										<xsd:attribute name="alias" type="xsd:string"/>										
 									</xsd:complexType>
 								</xsd:element>
 								<xsd:element name="Titulo" type="xsd:string"/>
