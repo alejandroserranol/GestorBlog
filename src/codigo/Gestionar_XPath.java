@@ -6,11 +6,15 @@
 package codigo;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -53,7 +57,7 @@ public class Gestionar_XPath {
 
     }
 
-    String ejecutar_XPath(String _consulta) {
+    String consultar_post(String _consulta) {
 
         String cadena_resultado = "";
         
@@ -178,6 +182,67 @@ public class Gestionar_XPath {
             }
         }
         return datos;
+    }
+
+    public String consultar_usuarios(String _consulta) {
+        
+        String cadena_resultado = "";
+        ArrayList<String> usuarios = new ArrayList<>();
+        int numeroUsuario = 1;
+        
+        try {
+            XPathExpression exp = xpath.compile(_consulta);
+            Object resultado = exp.evaluate(doc, XPathConstants.NODESET);
+            NodeList listaNodos = (NodeList) resultado;
+            
+            for(int i=0; i<listaNodos.getLength();i++){
+                if(!usuarios.contains(listaNodos.item(i).getNodeValue())){
+                    usuarios.add(listaNodos.item(i).getNodeValue());
+                }                
+            }
+            
+            for(String usuario: usuarios){
+                cadena_resultado += "Usuario "+ numeroUsuario + ":\t" + usuario + "\n";
+                numeroUsuario++;
+            }
+            
+        } catch (XPathExpressionException ex) {
+            Logger.getLogger(Gestionar_XPath.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return cadena_resultado;
+    }
+
+    String consultar_temas(String _consulta) {
+        
+        
+        String cadena_resultado = "";
+        ArrayList<String> temas = new ArrayList<>();
+        int numeroUsuario = 1;
+        
+        try {
+            XPathExpression exp = xpath.compile(_consulta);
+            Object resultado = exp.evaluate(doc, XPathConstants.NODESET);
+            NodeList listaNodos = (NodeList) resultado;
+            
+            for(int i=0; i<listaNodos.getLength();i++){
+                if(!temas.contains(listaNodos.item(i).getNodeValue())){
+                    temas.add(listaNodos.item(i).getNodeValue());
+                }                
+            }
+            
+            for(String tema: temas){
+                cadena_resultado += "Tema "+ numeroUsuario + ":\t" + tema + "\n";
+                numeroUsuario++;
+            }
+            
+        } catch (XPathExpressionException ex) {
+            Logger.getLogger(Gestionar_XPath.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return cadena_resultado;
     }
 
 }
