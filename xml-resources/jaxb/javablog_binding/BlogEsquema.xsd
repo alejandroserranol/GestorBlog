@@ -35,10 +35,10 @@
 								<xsd:element name="Titulo" type="xsd:string"/>
 								<xsd:element name="Texto" type="xsd:string"/>
 							</xsd:sequence>
+                                                        <xsd:attribute name="fecha" type="xsd:string"/>
 							<xsd:attribute name="id" type="xsd:string"/>
-							<xsd:attribute name="fecha" type="xsd:string"/>
-							<xsd:attribute name="tema" type="xsd:string"/>
 							<xsd:attribute name="likes" type="xsd:string"/>
+							<xsd:attribute name="tema" type="xsd:string"/>							
 					</xsd:complexType>
 				</xsd:element>
 			</xsd:choice>

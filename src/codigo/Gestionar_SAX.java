@@ -67,13 +67,13 @@ class ManejadorSAX extends DefaultHandler {
         if (qName.equals("Blogs")) {
             cadena_resultado = cadena_resultado + "Se van a mostrar los posts de este blog\n************************************************\n";
         } else if (qName.equals("Post")) {
-            cadena_resultado = cadena_resultado + "\nId: "
+            cadena_resultado = cadena_resultado + "\nEn fecha: "
                     + attributes.getValue(attributes.getQName(0));
-            cadena_resultado = cadena_resultado + "\tEn fecha: "
+            cadena_resultado = cadena_resultado + "\tId: "
                     + attributes.getValue(attributes.getQName(1));
-            cadena_resultado = cadena_resultado + "\tTema : "
-                    + attributes.getValue(attributes.getQName(2));
             cadena_resultado = cadena_resultado + "\tNúmero de likes: "
+                    + attributes.getValue(attributes.getQName(2));
+            cadena_resultado = cadena_resultado + "\tTema : "
                     + attributes.getValue(attributes.getQName(3));
         } else if (qName.equals("Usuario")) {
             cadena_resultado = cadena_resultado + "\nUsuario: "

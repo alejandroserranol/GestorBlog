@@ -113,6 +113,10 @@ public class Gestionar_DOM {
     }
     
     private Node crearNodoPost(String[] _elementosOrdenados) {
+        //System.out.println(_elementosOrdenados.length);
+        for(String elemento: _elementosOrdenados){
+            //System.out.println(elemento);
+        }
         
         int apuntador = _elementosOrdenados.length-1;
         //Hijo de Post
@@ -156,7 +160,7 @@ public class Gestionar_DOM {
         nlinkedin.appendChild(nlinkedin_text);
         apuntador--;        
         //Hijo de Usuario
-        Node nredesSociales = doc.createElement("DatosContacto");
+        Node nredesSociales = doc.createElement("RedesSociales");
         nredesSociales.appendChild(nlinkedin);
         nredesSociales.appendChild(ngithub);
         //Hijo de Usuario
@@ -180,14 +184,14 @@ public class Gestionar_DOM {
         nusuario.appendChild(ndatosContacto);
         
         Node npost = doc.createElement("Post");
-        ((Element)npost).setAttribute("id", _elementosOrdenados[1]);
-        apuntador++;
-        ((Element)npost).setAttribute("fecha", _elementosOrdenados[0]);
-        apuntador++;
-        ((Element)npost).setAttribute("tema", _elementosOrdenados[3]);
-        apuntador++;
-        ((Element)npost).setAttribute("likes", _elementosOrdenados[2]);
-        apuntador++;
+        ((Element)npost).setAttribute("id", _elementosOrdenados[apuntador]);
+        apuntador--;
+        ((Element)npost).setAttribute("fecha", _elementosOrdenados[apuntador]);
+        apuntador--;
+        ((Element)npost).setAttribute("tema", _elementosOrdenados[apuntador]);
+        apuntador--;
+        ((Element)npost).setAttribute("likes", _elementosOrdenados[apuntador]);
+        apuntador--;
         
         npost.appendChild(nusuario);
         npost.appendChild(nTitulo);

@@ -72,10 +72,10 @@ public class Gestionar_XPath {
             while(auxiliar<datos_post.length){
                 switch(auxiliar){
                     //Los primeros atributos están desordenados.
-                    case 0: cadena_resultado += "Id: " + datos_post[1] + "\t";break;
-                    case 1: cadena_resultado += "En fecha: " + datos_post[0] + "\t";break;
-                    case 2: cadena_resultado += "Tema : " + datos_post[3] + "\t";break;
-                    case 3: cadena_resultado += "Número de likes: " + datos_post[2] + "\n\n";break;
+                    case 0: cadena_resultado += "En fecha: " + datos_post[auxiliar] + "\t";break;
+                    case 1: cadena_resultado += "Id: " + datos_post[auxiliar] + "\t";break;
+                    case 2: cadena_resultado += "Número de likes: " + datos_post[auxiliar] + "\t";break;
+                    case 3: cadena_resultado += "Tema : " + datos_post[auxiliar] + "\n\n";break;
                     case 4: cadena_resultado += "Usuario: " + datos_post[auxiliar] + "\n\nDatos personales:\n";break;
                     case 5: cadena_resultado += "\n\tNombre:\t" + datos_post[auxiliar];break;
                     case 6: cadena_resultado += "\n\tApellido:\t" + datos_post[auxiliar]+"\n\tRedes sociales:\t";break;
@@ -108,7 +108,7 @@ public class Gestionar_XPath {
         String datosUsuario[] = null;
 
         //Atributos de <Post>
-        for (int i = 0; i < nodoPost.getAttributes().getLength(); i++) {
+        for(int i=0; i<nodoPost.getAttributes().getLength(); i++){
             datos[contador] = nodoPost.getAttributes().item(i).getNodeValue();
             contador++;
         }
@@ -137,7 +137,6 @@ public class Gestionar_XPath {
             }
 
         }
-
         return datos;
     }
 
