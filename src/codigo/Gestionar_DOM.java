@@ -18,13 +18,17 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.*;
 
 /**
- *
+ * Gestionar_DOM --- Clase con los métodos utilizados para acceder al contenido del fichero XML con DOM
  * @author Alejandro Serrano Loredo
  */
 public class Gestionar_DOM {
 
     Document doc;
-
+    /**
+     * Prepara el Document para recorrer el fichero.
+     * @param _fichero: Fichero abierto en el método "dialogoSeleccionarFichero()".
+     * @return int para manejar los errores que se puedan producir.
+     */
     public int preparar_DOM(File _fichero) {
 
         //doc representará el árbol DOM.
@@ -52,7 +56,10 @@ public class Gestionar_DOM {
             return -1;
         }
     }
-
+    /**
+     * @see Cuenta el número de posts en el blog.
+     * @return int con el número de posts en el blog.
+     */
     public int contarPosts() {
         int numeroPosts = 0;
         Node raiz = doc.getFirstChild();
@@ -65,7 +72,12 @@ public class Gestionar_DOM {
         }
         return numeroPosts;
     }
-
+    /**
+     * @see Modifica el DOM para añadir un elemento Post y lo guarda en el disco duro.
+     * @param _campos: Array de Strings que contiene los elementos utilizados para crear un nodo Post.
+     * @param _fichero: Fichero abierto en el método "dialogoSeleccionarFichero()".
+     * @return int para manejar los errores que se puedan producir.
+     */
     public int publicarPost(String[] _campos, File _fichero) {
 
         try {
@@ -85,7 +97,11 @@ public class Gestionar_DOM {
         }
 
     }
-
+    /**
+     * @see Añade los elementos no introducidos por el usuario y lo devuelve ordenado.
+     * @param _campos: Array de Strings que contiene los elementos utilizados para crear un nodo Post.
+     * @return Array de Strings con la información que se desea añadir al nuevo nodo post.
+     */
     private String[] ordenaElementos(String[] _campos) {
 
         String auxiliar[] = new String[14];
@@ -109,12 +125,12 @@ public class Gestionar_DOM {
       
         return auxiliar;
     }
-    
+    /**
+     * @see Crea los nodos descendientes del nodo Post
+     * @param _elementosOrdenados: Array de Strings con la información que se desea añadir al nuevo nodo post.
+     * @return Nodo post a añadir a la estructura del DOM.
+     */
     private Node crearNodoPost(String[] _elementosOrdenados) {
-        //System.out.println(_elementosOrdenados.length);
-        for(String elemento: _elementosOrdenados){
-            //System.out.println(elemento);
-        }
         
         int apuntador = _elementosOrdenados.length-1;
         //Hijo de Post
@@ -198,7 +214,11 @@ public class Gestionar_DOM {
         
         return npost;
     }
-
+    /**
+     * @see Guarda la estructura del DOM almacenada en memoria en el disco duro.
+     * @param _fichero: Fichero abierto en el método "dialogoSeleccionarFichero()".
+     * @throws IOException 
+     */
     private void guardar_DOM_como_fichero(File _fichero) throws IOException {
 
         try {

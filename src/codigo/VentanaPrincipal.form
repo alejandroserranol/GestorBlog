@@ -6,8 +6,6 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="buttonGroupCambios">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroupConsultaUsuario">
-    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -520,71 +518,56 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" pref="921" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" pref="911" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="jLabelConsulta" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabelConsulta" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jRadioButtonUsuarios" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jRadioButtonTemas" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jRadioButtonNumeroPosts" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jRadioButtonPostPopular" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
+                                          <Component id="jRadioButtonUsuarios" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRadioButtonTemas" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
-                                      <Component id="jButtonConsulta" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jRadioButtonNumeroPosts" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRadioButtonPostPopular" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
+                              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                                      <Component id="jLabelUsuario" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldUsuario" min="-2" pref="180" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabelMensajeConsulta" min="-2" pref="230" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jRadioButtonNumeroPostsUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRadioButtonDatosContacto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jRadioButtonTodosPostsUsuario" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
-                                              <Component id="jLabelUsuario" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jTextFieldUsuario" min="-2" pref="180" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="jLabelMensajeConsulta" min="-2" pref="230" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jRadioButtonNumeroPostsUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jRadioButtonDatosContacto" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="jRadioButtonTodosPostsUsuario" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="jRadioButtonRedesSociales" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                  </Group>
-                                              </Group>
+                                              <Component id="jRadioButtonRedesSociales" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                      <Component id="jButtonConsultaUsuario" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
+                      <Component id="jButtonConsulta" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -627,12 +610,9 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButtonConsulta" pref="49" max="32767" attributes="0"/>
-                          <Component id="jButtonConsultaUsuario" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <EmptySpace pref="9" max="32767" attributes="0"/>
+                      <Component id="jButtonConsulta" min="-2" pref="49" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane3" pref="345" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -698,7 +678,7 @@
             <Component class="javax.swing.JRadioButton" name="jRadioButtonNumeroPostsUsuario">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="buttonGroupConsultaUsuario"/>
+                  <ComponentRef name="buttonGroupConsulta"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="N&#xfa;mero de posts"/>
               </Properties>
@@ -706,7 +686,7 @@
             <Component class="javax.swing.JRadioButton" name="jRadioButtonDatosContacto">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="buttonGroupConsultaUsuario"/>
+                  <ComponentRef name="buttonGroupConsulta"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Datos de contacto"/>
               </Properties>
@@ -714,7 +694,7 @@
             <Component class="javax.swing.JRadioButton" name="jRadioButtonRedesSociales">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="buttonGroupConsultaUsuario"/>
+                  <ComponentRef name="buttonGroupConsulta"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Redes sociales"/>
               </Properties>
@@ -722,19 +702,10 @@
             <Component class="javax.swing.JRadioButton" name="jRadioButtonTodosPostsUsuario">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="buttonGroupConsultaUsuario"/>
+                  <ComponentRef name="buttonGroupConsulta"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Todos sus posts"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButtonConsultaUsuario">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Realizar consulta"/>
-                <Property name="enabled" type="boolean" value="false"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonConsultaUsuarioActionPerformed"/>
-              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
               <AuxValues>
@@ -767,18 +738,20 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabelCambios" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jLabelMensajeAjustes" min="-2" pref="230" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="jRadioButtonAlias" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabelAliasOld" max="32767" attributes="0"/>
+                                          <Component id="jLabelAliasNew" max="32767" attributes="0"/>
+                                      </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jTextFieldAliasNew" max="32767" attributes="0"/>
@@ -786,61 +759,142 @@
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jRadioButtonLinkedin" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRadioButtonAlias" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="jRadioButtonEmail" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace pref="20" max="32767" attributes="0"/>
+                                              <Component id="jRadioButtonNombre" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="jLabelNombreOld" max="32767" attributes="0"/>
+                                                  <Component id="jLabelNombreNew" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jTextFieldNombreOld" alignment="1" pref="174" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldNombreNew" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                              <Component id="jRadioButtonApellido" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jTextFieldEmailOld" max="32767" attributes="0"/>
-                                                  <Component id="jTextFieldEmailNew" min="-2" pref="174" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="jLabelApellidoNew" max="32767" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldApellidoNew" min="-2" pref="174" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="jLabelApellidoOld" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldApellidoOld" min="-2" pref="174" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jRadioButtonLinkedin" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jTextFieldLinkedinOld" max="32767" attributes="0"/>
-                                                  <Component id="jTextFieldLinkedinNew" max="32767" attributes="0"/>
-                                              </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jRadioButtonGithub" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabelGithubNew" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="jLabelGithubOld" alignment="1" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jRadioButtonTelefono" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jRadioButtonGithub" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jRadioButtonNombre" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jTextFieldNombreOld" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jTextFieldNombreNew" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jTextFieldGithubOld" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jTextFieldGithubNew" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jTextFieldTelefonoOld" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jTextFieldTelefonoNew" min="-2" pref="174" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jRadioButtonEmail" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="jLabelLinkedinOld" max="32767" attributes="0"/>
+                                                  <Component id="jLabelLinkedinNew" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jTextFieldLinkedinOld" max="32767" attributes="0"/>
+                                                  <Component id="jTextFieldLinkedinNew" pref="174" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jButtonModificar" min="-2" pref="174" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jRadioButtonTelefono" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jTextFieldGithubOld" alignment="1" pref="174" max="32767" attributes="0"/>
+                                                  <Component id="jTextFieldGithubNew" alignment="1" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                                               <Component id="jRadioButtonDireccion" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabelEmailOld" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldEmailOld" min="-2" pref="173" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabelEmailNew" min="-2" pref="37" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldEmailNew" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace pref="48" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabelTelefonoOld" max="32767" attributes="0"/>
+                                          <Component id="jLabelTelefonoNew" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jTextFieldTelefonoNew" min="-2" pref="173" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldTelefonoOld" min="-2" pref="173" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jLabelDireccionNew" min="-2" pref="37" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldDireccionNew" min="-2" pref="174" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jLabelDireccionOld" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="jTextFieldDireccionOld" min="-2" pref="174" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jTextFieldDireccionNew" alignment="1" min="-2" pref="174" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jRadioButtonApellido" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jTextFieldApellidoOld" min="-2" pref="174" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="jTextFieldApellidoNew" alignment="1" min="-2" pref="174" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="jButtonModificar" min="-2" pref="174" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -856,80 +910,133 @@
                           <Component id="jLabelCambios" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelMensajeAjustes" min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jRadioButtonAlias" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jRadioButtonNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jRadioButtonApellido" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jRadioButtonAlias" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextFieldAliasOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelAliasOld" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextFieldAliasNew" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jRadioButtonLinkedin" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldLinkedinOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAliasNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelAliasNew" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextFieldLinkedinNew" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jRadioButtonEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldEmailOld" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextFieldEmailNew" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextFieldNombreOld" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jRadioButtonNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextFieldNombreNew" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jTextFieldNombreOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelNombreOld" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextFieldApellidoOld" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jRadioButtonApellido" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextFieldApellidoNew" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jTextFieldNombreNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelNombreNew" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextFieldGithubOld" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButtonGithub" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextFieldGithubNew" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextFieldDireccionOld" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jRadioButtonDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                                      <Component id="jTextFieldDireccionNew" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jTextFieldApellidoOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelApellidoOld" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextFieldTelefonoOld" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jRadioButtonTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                      <Component id="jTextFieldTelefonoNew" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jTextFieldApellidoNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelApellidoNew" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jRadioButtonLinkedin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioButtonGithub" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldLinkedinOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelLinkedinOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldLinkedinNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelLinkedinNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jRadioButtonEmail" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldGithubOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelGithubOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldGithubNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelGithubNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jRadioButtonDireccion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jRadioButtonTelefono" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldEmailOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelEmailOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldEmailNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelEmailNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldDireccionOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelDireccionOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldDireccionNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelDireccionNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldTelefonoOld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelTelefonoOld" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldTelefonoNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelTelefonoNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="jButtonModificar" min="-2" pref="82" max="-2" attributes="0"/>
-                      <EmptySpace pref="108" max="32767" attributes="0"/>
+                      <EmptySpace pref="70" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -950,15 +1057,19 @@
                 <Property name="text" type="java.lang.String" value="Usuario"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldAliasOld">
+            <Component class="javax.swing.JLabel" name="jLabelAliasOld">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Apodo antiguo"/>
+                <Property name="text" type="java.lang.String" value="Antiguo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldAliasOld">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelAliasNew">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nuevo"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldAliasNew">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Apodo nuevo"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButtonNombre">
               <Properties>
@@ -968,15 +1079,19 @@
                 <Property name="text" type="java.lang.String" value="Nombre"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldNombreOld">
+            <Component class="javax.swing.JLabel" name="jLabelNombreOld">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nombre antiguo"/>
+                <Property name="text" type="java.lang.String" value="Antiguo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldNombreOld">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelNombreNew">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nuevo"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldNombreNew">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Nombre nuevo"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButtonApellido">
               <Properties>
@@ -986,15 +1101,19 @@
                 <Property name="text" type="java.lang.String" value="Apellido"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldApellidoOld">
+            <Component class="javax.swing.JLabel" name="jLabelApellidoOld">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Apellido antiguo"/>
+                <Property name="text" type="java.lang.String" value="Antiguo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldApellidoOld">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelApellidoNew">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nuevo"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldApellidoNew">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Apellido nuevo"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButtonLinkedin">
               <Properties>
@@ -1004,15 +1123,19 @@
                 <Property name="text" type="java.lang.String" value="Linkedin"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldLinkedinOld">
+            <Component class="javax.swing.JLabel" name="jLabelLinkedinOld">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Linkedin antiguo"/>
+                <Property name="text" type="java.lang.String" value="Antiguo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldLinkedinOld">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelLinkedinNew">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nuevo"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldLinkedinNew">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Linkedin nuevo"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButtonGithub">
               <Properties>
@@ -1022,15 +1145,19 @@
                 <Property name="text" type="java.lang.String" value="Github"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldGithubOld">
+            <Component class="javax.swing.JLabel" name="jLabelGithubOld">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Github antiguo"/>
+                <Property name="text" type="java.lang.String" value="Antiguo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldGithubOld">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelGithubNew">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nuevo"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldGithubNew">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Github nuevo"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButtonEmail">
               <Properties>
@@ -1040,15 +1167,19 @@
                 <Property name="text" type="java.lang.String" value="Email"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldEmailOld">
+            <Component class="javax.swing.JLabel" name="jLabelEmailOld">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Email antiguo"/>
+                <Property name="text" type="java.lang.String" value="Antiguo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldEmailOld">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelEmailNew">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nuevo"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldEmailNew">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Email nuevo"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButtonTelefono">
               <Properties>
@@ -1058,15 +1189,19 @@
                 <Property name="text" type="java.lang.String" value="Tel&#xe9;fono"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldTelefonoOld">
+            <Component class="javax.swing.JLabel" name="jLabelTelefonoOld">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Telefono antiguo"/>
+                <Property name="text" type="java.lang.String" value="Antiguo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldTelefonoOld">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelTelefonoNew">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nuevo"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldTelefonoNew">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Telefono nuevo"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButtonDireccion">
               <Properties>
@@ -1076,15 +1211,19 @@
                 <Property name="text" type="java.lang.String" value="Direcci&#xf3;n"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldDireccionOld">
+            <Component class="javax.swing.JLabel" name="jLabelDireccionOld">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Direccion antigua"/>
+                <Property name="text" type="java.lang.String" value="Antiguo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldDireccionOld">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelDireccionNew">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nuevo"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldDireccionNew">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Direccion nueva"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonModificar">
               <Properties>

@@ -13,13 +13,17 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 /**
- *
+ * Gestionar_JAXB --- Clase con los métodos utilizados para acceder al contenido del fichero XML con JAXB.
  * @author Alejandro Serrano Loredo
  */
 public class Gestionar_JAXB {
 
     Blog miBlog;
-
+    /**
+     * @see  Prepara el objeto Blog con el método unmarshal() de la clase Unmarshaller.
+     * @param _fichero: Fichero abierto en el método "dialogoSeleccionarFichero()".
+     * @return int para manejar los errores que se puedan producir.
+     */
     public int preparar_JAXB(File _fichero) {
 
         try {
@@ -36,7 +40,12 @@ public class Gestionar_JAXB {
         }
 
     }
-
+    /**
+     * @see Incrementa en una unidad el número de likes del post elegido en el combobox.
+     * @param _idPost: String con el id del post al que dar like.
+     * @param _fichero: Fichero abierto en el método "dialogoSeleccionarFichero()".
+     * @return int para manejar los errores que se puedan producir.
+     */
     public int annadirLike(String _idPost, File _fichero) {
 
         try {
@@ -52,7 +61,7 @@ public class Gestionar_JAXB {
                 }
             }
 
-            serializar_JAXB(miBlog, _fichero);
+            serializar_JAXB(_fichero);
 
             return 0;
         } catch (Exception e) {
@@ -61,7 +70,14 @@ public class Gestionar_JAXB {
 
     }
     
-    
+    /**
+     * @see Modifica el elemento seleccionado con el RadioButton.
+     * @param _elementoACambiar: String con el nombre del elemento que se desea cambiar.
+     * @param _elementoAntiguo: String con el valor antiguo del elemento a sustituir introducido en el TextField.
+     * @param _elementoNuevo: String con el valor nuevo del elemento a sustituir introducido en el TextField.
+     * @param _fichero: Fichero abierto en el método "dialogoSeleccionarFichero()".
+     * @return int para manejar los errores que se puedan producir.
+     */
     public int modificar_JAXB(String _elementoACambiar, String _elementoAntiguo, String _elementoNuevo, File _fichero) {
         
         try {
@@ -118,7 +134,7 @@ public class Gestionar_JAXB {
             }
 
 
-            serializar_JAXB(miBlog, _fichero);
+            serializar_JAXB(_fichero);
 
             return 0;
         } catch (Exception e) {
@@ -126,8 +142,11 @@ public class Gestionar_JAXB {
         }
         
     }
-
-    private void serializar_JAXB(Blog _miBlog, File _fichero) {
+    /**
+     * @see Guarda la modificación realizada en memoria en el disco duro.
+     * @param _fichero: Fichero abierto en el método "dialogoSeleccionarFichero()".
+     */
+    private void serializar_JAXB(File _fichero) {
 
         try {
             //Crea una instancia JAXB.

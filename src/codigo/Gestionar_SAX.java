@@ -14,7 +14,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 /**
- *
+ * Gestionar_SAX --- Clase con los métodos utilizados para acceder al contenido del fichero XML con SAX.
  * @author Alejandro Serrano Loredo
  */
 public class Gestionar_SAX {
@@ -23,7 +23,12 @@ public class Gestionar_SAX {
     ManejadorSAX sh;
     File ficheroXML;
 
-    int preparar_SAX(File _fichero) {
+    /**
+     * @see Prepara el SAXParser y el ManejadorSAX para recorrer el fichero.
+     * @param _fichero: Fichero abierto en el método "dialogoSeleccionarFichero()".
+     * @return int para manejar los errores que se puedan producir.
+     */
+    public int preparar_SAX(File _fichero) {
 
         try {
             //Se crea un objeto SAXParser para interpretar el documentoXML.
@@ -40,8 +45,11 @@ public class Gestionar_SAX {
             return -1;
         }
     }
-
-    String recorrerSAX() {
+    /**
+     * @see Recorre el fichero XML y maneja las interrupciones con la clase ManejadorSAX.
+     * @return String que se desea mostrar en pantalla.
+     */
+    public String recorrerSAX() {
         try {
             sh.cadena_resultado = "";
             parser.parse(ficheroXML, sh);
@@ -55,7 +63,10 @@ public class Gestionar_SAX {
     }
 
 }
-
+/**
+ * ManejadorSAX --- Maneja las interrupciones que se producen al recorrer el fichero XML con SAX.
+ * @author    Alejandro Serrano Loredo
+ */
 class ManejadorSAX extends DefaultHandler {
 
     String cadena_resultado = "";

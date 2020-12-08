@@ -21,14 +21,18 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- *
+ * Gestionar_XPath --- Clase con los métodos utilizados para acceder al contenido del fichero XML con XPath
  * @author Alejandro Serrano Loredo
  */
 public class Gestionar_XPath {
 
     Document doc;
     XPath xpath;
-
+    /**
+     * @see Prepara el Document y el XPath para recorrer el fichero.
+     * @param _fichero: Fichero abierto en el método "dialogoSeleccionarFichero()".
+     * @return int para manejar los errores que se puedan producir.
+     */
     public int preparar_XPath(File _fichero) {
 
         //doc representará el árbol DOM.
@@ -56,7 +60,11 @@ public class Gestionar_XPath {
         }
 
     }
-
+    /**
+     * @see Procesa la consulta y devuelve un string con la información deseada.
+     * @param _consulta: String con la información a compilar con el XPathExpression.
+     * @return String con la información que se desea mostrar en el jTextArea.
+     */
     public String consultar_post(String _consulta) {
 
         String cadena_resultado = "";
@@ -100,8 +108,12 @@ public class Gestionar_XPath {
             return "Error en la ejecución de la salida";
         }
     }
-
-    private String[] procesarPost(Node nodoPost) {
+    /**
+     * @see Procesa el nodo recibido y devuelve la información deseada.
+     * @param _nodoPost: Nodo del que se desea obtener información.
+     * @return Array de Strings que contiene la información del nodo.
+     */
+    private String[] procesarPost(Node _nodoPost) {
 
         String datos[] = new String[14];
         int contador = 0;
@@ -112,13 +124,13 @@ public class Gestionar_XPath {
         String datosUsuario[] = null;
 
         //Atributos de <Post>
-        for (int i = 0; i < nodoPost.getAttributes().getLength(); i++) {
-            datos[contador] = nodoPost.getAttributes().item(i).getNodeValue();
+        for (int i = 0; i < _nodoPost.getAttributes().getLength(); i++) {
+            datos[contador] = _nodoPost.getAttributes().item(i).getNodeValue();
             contador++;
         }
 
         //hijos de <Post>
-        nodosHijoDePost = nodoPost.getChildNodes();
+        nodosHijoDePost = _nodoPost.getChildNodes();
 
         for (int j = 0; j < nodosHijoDePost.getLength(); j++) {
             nodoHijoDePost = nodosHijoDePost.item(j);
@@ -143,20 +155,24 @@ public class Gestionar_XPath {
         }
         return datos;
     }
-
-    private String[] procesaUsuario(Node nodoUsuario) {
+    /**
+     * @see Procesa el nodo recibido y devuelve la información deseada.
+     * @param _nodoUsuario: Nodo del que se desea obtener información.
+     * @return Array de Strings que contiene la información del nodo.
+     */
+    private String[] procesaUsuario(Node _nodoUsuario) {
 
         String datos[] = new String[8];
         int contador = 0;
 
-        NodeList NodosHijosDeUsuario = nodoUsuario.getChildNodes();
+        NodeList NodosHijosDeUsuario = _nodoUsuario.getChildNodes();
         Node NodoHijoDeUsuario = null;
         NodeList listaAuxiliar = null;
         Node nodoAuxiliar = null;
 
         //Atributos de <Post>
-        for (int i = 0; i < nodoUsuario.getAttributes().getLength(); i++) {
-            datos[contador] = nodoUsuario.getAttributes().item(contador).getNodeValue();
+        for (int i = 0; i < _nodoUsuario.getAttributes().getLength(); i++) {
+            datos[contador] = _nodoUsuario.getAttributes().item(contador).getNodeValue();
             contador++;
         }
 
@@ -183,7 +199,11 @@ public class Gestionar_XPath {
         }
         return datos;
     }
-
+    /**
+     * @see Procesa la consulta y devuelve un string con la información deseada.
+     * @param _consulta: String con la información a compilar con el XPathExpression.
+     * @return  String con la información que se desea mostrar en el jTextArea.
+     */
     public String consultar_atributos(String _consulta) {
 
         String cadena_resultado = "";
@@ -212,7 +232,10 @@ public class Gestionar_XPath {
 
         return cadena_resultado;
     }
-
+    /**
+     * @see Procesa la consulta y devuelve un int con la información deseada.
+     * @return int con el id del post con más likes.
+     */
     public int buscar_post_mas_popular() {
         int id = 1;
         int likesNodoActual = 0;
@@ -237,7 +260,11 @@ public class Gestionar_XPath {
         }
         return id;
     }
-
+    /**
+     * @see Procesa la consulta y devuelve un string con la información deseada.
+     * @param _consulta: String con la información a compilar con el XPathExpression.
+     * @return String con la información que se desea mostrar en el jTextArea.
+     */
     public String consultar_numero_posts(String _consulta) {
 
         String cadena_resultado = "Número de posts en el blog:\t";
@@ -260,9 +287,14 @@ public class Gestionar_XPath {
 
         return cadena_resultado;
     }
-
+    /**
+     * @see Procesa la consulta y devuelve un string con la información deseada.
+     * @param _consulta: String con la información a compilar con el XPathExpression.
+     * @param _alias: String con el alias del usuario del que se desea realizar la consulta.
+     * @return String con la información que se desea mostrar en el jTextArea.
+     */
     String consultar_numero_posts(String _consulta, String _alias) {
-        String cadena_resultado = "Número de posts en el blog:\t";
+        String cadena_resultado = "Número de posts de '"+ _alias +"' en el blog:\t";
         int contador = 0;
         NodeList listaHijosDePost = null;
         Node hijoDePost = null;
@@ -295,7 +327,12 @@ public class Gestionar_XPath {
 
         return cadena_resultado;
     }
-
+    /**
+     * @see Procesa la consulta y devuelve un string con la información deseada.
+     * @param _consulta: String con la información a compilar con el XPathExpression.
+     * @param _datosUsuario: String que indica si se desea consultar los datos de contacto o las redes sociales.
+     * @return String con la información que se desea mostrar en el jTextArea.
+     */
     public String consultar_informacion_usuario(String _consulta, String _datosUsuario) {
         String cadena_resultado = "";
         int apuntador = 0;
@@ -371,7 +408,11 @@ public class Gestionar_XPath {
 
         return cadena_resultado;
     }
-
+    /**
+     * @see Procesa la consulta y devuelve un string con la información deseada.
+     * @param _consulta: String con la información a compilar con el XPathExpression.
+     * @return String con la información que se desea mostrar en el jTextArea.
+     */
     public String consultar_todos_posts(String _consulta) {
         
         String cadena_resultado = "";

@@ -41,7 +41,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         buttonGroupConsulta = new javax.swing.ButtonGroup();
         buttonGroupCambios = new javax.swing.ButtonGroup();
-        buttonGroupConsultaUsuario = new javax.swing.ButtonGroup();
         jButtonConectarSAX = new javax.swing.JButton();
         jLabelMensajeConexion = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -98,35 +97,50 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jRadioButtonDatosContacto = new javax.swing.JRadioButton();
         jRadioButtonRedesSociales = new javax.swing.JRadioButton();
         jRadioButtonTodosPostsUsuario = new javax.swing.JRadioButton();
-        jButtonConsultaUsuario = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextAreaSalidaConsulta = new javax.swing.JTextArea();
         ajustesPersonales = new javax.swing.JPanel();
         jLabelCambios = new javax.swing.JLabel();
         jLabelMensajeAjustes = new javax.swing.JLabel();
         jRadioButtonAlias = new javax.swing.JRadioButton();
+        jLabelAliasOld = new javax.swing.JLabel();
         jTextFieldAliasOld = new javax.swing.JTextField();
+        jLabelAliasNew = new javax.swing.JLabel();
         jTextFieldAliasNew = new javax.swing.JTextField();
         jRadioButtonNombre = new javax.swing.JRadioButton();
+        jLabelNombreOld = new javax.swing.JLabel();
         jTextFieldNombreOld = new javax.swing.JTextField();
+        jLabelNombreNew = new javax.swing.JLabel();
         jTextFieldNombreNew = new javax.swing.JTextField();
         jRadioButtonApellido = new javax.swing.JRadioButton();
+        jLabelApellidoOld = new javax.swing.JLabel();
         jTextFieldApellidoOld = new javax.swing.JTextField();
+        jLabelApellidoNew = new javax.swing.JLabel();
         jTextFieldApellidoNew = new javax.swing.JTextField();
         jRadioButtonLinkedin = new javax.swing.JRadioButton();
+        jLabelLinkedinOld = new javax.swing.JLabel();
         jTextFieldLinkedinOld = new javax.swing.JTextField();
+        jLabelLinkedinNew = new javax.swing.JLabel();
         jTextFieldLinkedinNew = new javax.swing.JTextField();
         jRadioButtonGithub = new javax.swing.JRadioButton();
+        jLabelGithubOld = new javax.swing.JLabel();
         jTextFieldGithubOld = new javax.swing.JTextField();
+        jLabelGithubNew = new javax.swing.JLabel();
         jTextFieldGithubNew = new javax.swing.JTextField();
         jRadioButtonEmail = new javax.swing.JRadioButton();
+        jLabelEmailOld = new javax.swing.JLabel();
         jTextFieldEmailOld = new javax.swing.JTextField();
+        jLabelEmailNew = new javax.swing.JLabel();
         jTextFieldEmailNew = new javax.swing.JTextField();
         jRadioButtonTelefono = new javax.swing.JRadioButton();
+        jLabelTelefonoOld = new javax.swing.JLabel();
         jTextFieldTelefonoOld = new javax.swing.JTextField();
+        jLabelTelefonoNew = new javax.swing.JLabel();
         jTextFieldTelefonoNew = new javax.swing.JTextField();
         jRadioButtonDireccion = new javax.swing.JRadioButton();
+        jLabelDireccionOld = new javax.swing.JLabel();
         jTextFieldDireccionOld = new javax.swing.JTextField();
+        jLabelDireccionNew = new javax.swing.JLabel();
         jTextFieldDireccionNew = new javax.swing.JTextField();
         jButtonModificar = new javax.swing.JButton();
 
@@ -410,25 +424,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabelUsuario.setText("Usuario");
 
-        buttonGroupConsultaUsuario.add(jRadioButtonNumeroPostsUsuario);
+        buttonGroupConsulta.add(jRadioButtonNumeroPostsUsuario);
         jRadioButtonNumeroPostsUsuario.setText("Número de posts");
 
-        buttonGroupConsultaUsuario.add(jRadioButtonDatosContacto);
+        buttonGroupConsulta.add(jRadioButtonDatosContacto);
         jRadioButtonDatosContacto.setText("Datos de contacto");
 
-        buttonGroupConsultaUsuario.add(jRadioButtonRedesSociales);
+        buttonGroupConsulta.add(jRadioButtonRedesSociales);
         jRadioButtonRedesSociales.setText("Redes sociales");
 
-        buttonGroupConsultaUsuario.add(jRadioButtonTodosPostsUsuario);
+        buttonGroupConsulta.add(jRadioButtonTodosPostsUsuario);
         jRadioButtonTodosPostsUsuario.setText("Todos sus posts");
-
-        jButtonConsultaUsuario.setText("Realizar consulta");
-        jButtonConsultaUsuario.setEnabled(false);
-        jButtonConsultaUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConsultaUsuarioActionPerformed(evt);
-            }
-        });
 
         jTextAreaSalidaConsulta.setColumns(20);
         jTextAreaSalidaConsulta.setRows(5);
@@ -442,51 +448,42 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(consultarLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 921, Short.MAX_VALUE))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE))
                     .addGroup(consultarLayout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelConsulta)
+                            .addGroup(consultarLayout.createSequentialGroup()
+                                .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButtonUsuarios)
+                                    .addComponent(jRadioButtonTemas))
+                                .addGap(18, 18, 18)
+                                .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButtonNumeroPosts)
+                                    .addComponent(jRadioButtonPostPopular))))
+                        .addGap(125, 125, 125)
                         .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(consultarLayout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addComponent(jLabelUsuario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelMensajeConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(consultarLayout.createSequentialGroup()
                                 .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelConsulta)
-                                    .addGroup(consultarLayout.createSequentialGroup()
-                                        .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jRadioButtonUsuarios)
-                                            .addComponent(jRadioButtonTemas))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jRadioButtonNumeroPosts)
-                                            .addComponent(jRadioButtonPostPopular)))))
-                            .addGroup(consultarLayout.createSequentialGroup()
-                                .addGap(101, 101, 101)
-                                .addComponent(jButtonConsulta)))
-                        .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(consultarLayout.createSequentialGroup()
-                                .addGap(125, 125, 125)
+                                    .addComponent(jRadioButtonNumeroPostsUsuario)
+                                    .addComponent(jRadioButtonDatosContacto))
+                                .addGap(18, 18, 18)
                                 .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButtonTodosPostsUsuario)
                                     .addGroup(consultarLayout.createSequentialGroup()
-                                        .addComponent(jLabelUsuario)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabelMensajeConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(consultarLayout.createSequentialGroup()
-                                        .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jRadioButtonNumeroPostsUsuario)
-                                            .addComponent(jRadioButtonDatosContacto))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(consultarLayout.createSequentialGroup()
-                                                .addComponent(jRadioButtonTodosPostsUsuario)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(consultarLayout.createSequentialGroup()
-                                                .addComponent(jRadioButtonRedesSociales)
-                                                .addGap(0, 0, Short.MAX_VALUE))))))
-                            .addGroup(consultarLayout.createSequentialGroup()
-                                .addGap(146, 146, 146)
-                                .addComponent(jButtonConsultaUsuario)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                        .addComponent(jRadioButtonRedesSociales)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addContainerGap())
+            .addGroup(consultarLayout.createSequentialGroup()
+                .addGap(289, 289, 289)
+                .addComponent(jButtonConsulta)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         consultarLayout.setVerticalGroup(
             consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -517,11 +514,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jRadioButtonTemas)
                                     .addComponent(jRadioButtonNumeroPosts))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(consultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                    .addComponent(jButtonConsultaUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(jButtonConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -533,58 +528,58 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         buttonGroupCambios.add(jRadioButtonAlias);
         jRadioButtonAlias.setText("Usuario");
 
-        jTextFieldAliasOld.setText("Apodo antiguo");
+        jLabelAliasOld.setText("Antiguo");
 
-        jTextFieldAliasNew.setText("Apodo nuevo");
+        jLabelAliasNew.setText("Nuevo");
 
         buttonGroupCambios.add(jRadioButtonNombre);
         jRadioButtonNombre.setText("Nombre");
 
-        jTextFieldNombreOld.setText("Nombre antiguo");
+        jLabelNombreOld.setText("Antiguo");
 
-        jTextFieldNombreNew.setText("Nombre nuevo");
+        jLabelNombreNew.setText("Nuevo");
 
         buttonGroupCambios.add(jRadioButtonApellido);
         jRadioButtonApellido.setText("Apellido");
 
-        jTextFieldApellidoOld.setText("Apellido antiguo");
+        jLabelApellidoOld.setText("Antiguo");
 
-        jTextFieldApellidoNew.setText("Apellido nuevo");
+        jLabelApellidoNew.setText("Nuevo");
 
         buttonGroupCambios.add(jRadioButtonLinkedin);
         jRadioButtonLinkedin.setText("Linkedin");
 
-        jTextFieldLinkedinOld.setText("Linkedin antiguo");
+        jLabelLinkedinOld.setText("Antiguo");
 
-        jTextFieldLinkedinNew.setText("Linkedin nuevo");
+        jLabelLinkedinNew.setText("Nuevo");
 
         buttonGroupCambios.add(jRadioButtonGithub);
         jRadioButtonGithub.setText("Github");
 
-        jTextFieldGithubOld.setText("Github antiguo");
+        jLabelGithubOld.setText("Antiguo");
 
-        jTextFieldGithubNew.setText("Github nuevo");
+        jLabelGithubNew.setText("Nuevo");
 
         buttonGroupCambios.add(jRadioButtonEmail);
         jRadioButtonEmail.setText("Email");
 
-        jTextFieldEmailOld.setText("Email antiguo");
+        jLabelEmailOld.setText("Antiguo");
 
-        jTextFieldEmailNew.setText("Email nuevo");
+        jLabelEmailNew.setText("Nuevo");
 
         buttonGroupCambios.add(jRadioButtonTelefono);
         jRadioButtonTelefono.setText("Teléfono");
 
-        jTextFieldTelefonoOld.setText("Telefono antiguo");
+        jLabelTelefonoOld.setText("Antiguo");
 
-        jTextFieldTelefonoNew.setText("Telefono nuevo");
+        jLabelTelefonoNew.setText("Nuevo");
 
         buttonGroupCambios.add(jRadioButtonDireccion);
         jRadioButtonDireccion.setText("Dirección");
 
-        jTextFieldDireccionOld.setText("Direccion antigua");
+        jLabelDireccionOld.setText("Antiguo");
 
-        jTextFieldDireccionNew.setText("Direccion nueva");
+        jLabelDireccionNew.setText("Nuevo");
 
         jButtonModificar.setText("Modificar");
         jButtonModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -605,58 +600,115 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabelMensajeAjustes, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ajustesPersonalesLayout.createSequentialGroup()
-                        .addGap(60, 60, 60)
                         .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ajustesPersonalesLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jRadioButtonAlias)
+                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelAliasOld, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabelAliasNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextFieldAliasNew)
                                     .addComponent(jTextFieldAliasOld, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(ajustesPersonalesLayout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(140, 140, 140)
+                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButtonLinkedin)
+                                    .addComponent(jRadioButtonAlias))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
                                 .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(ajustesPersonalesLayout.createSequentialGroup()
-                                        .addComponent(jRadioButtonEmail)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextFieldEmailOld)
-                                            .addComponent(jTextFieldEmailNew, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jRadioButtonNombre)
+                                        .addGap(10, 10, 10))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ajustesPersonalesLayout.createSequentialGroup()
+                                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jLabelNombreOld, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabelNombreNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)))
+                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldNombreOld, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldNombreNew, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(ajustesPersonalesLayout.createSequentialGroup()
-                                        .addComponent(jRadioButtonLinkedin)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextFieldLinkedinOld)
-                                            .addComponent(jTextFieldLinkedinNew))))))
-                        .addGap(18, 18, 18)
+                                        .addGap(24, 24, 24)
+                                        .addComponent(jRadioButtonApellido))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ajustesPersonalesLayout.createSequentialGroup()
+                                        .addGap(47, 47, 47)
+                                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ajustesPersonalesLayout.createSequentialGroup()
+                                                .addComponent(jLabelApellidoNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jTextFieldApellidoNew, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ajustesPersonalesLayout.createSequentialGroup()
+                                                .addComponent(jLabelApellidoOld)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jTextFieldApellidoOld, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jRadioButtonGithub)
+                                    .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabelGithubNew, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabelGithubOld, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ajustesPersonalesLayout.createSequentialGroup()
+                        .addGap(142, 142, 142)
                         .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(ajustesPersonalesLayout.createSequentialGroup()
                                 .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButtonTelefono)
-                                    .addComponent(jRadioButtonGithub)
-                                    .addComponent(jRadioButtonNombre))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldNombreOld, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextFieldNombreNew, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextFieldGithubOld, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextFieldGithubNew, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextFieldTelefonoOld, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextFieldTelefonoNew, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ajustesPersonalesLayout.createSequentialGroup()
+                                        .addComponent(jRadioButtonEmail)
+                                        .addGap(192, 192, 192))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ajustesPersonalesLayout.createSequentialGroup()
+                                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jLabelLinkedinOld, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabelLinkedinNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jTextFieldLinkedinOld)
+                                            .addComponent(jTextFieldLinkedinNew, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))))
                                 .addGap(18, 18, 18)
                                 .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ajustesPersonalesLayout.createSequentialGroup()
-                                        .addComponent(jRadioButtonDireccion)
+                                    .addComponent(jButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                                        .addComponent(jRadioButtonTelefono)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextFieldDireccionOld, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextFieldDireccionNew, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ajustesPersonalesLayout.createSequentialGroup()
-                                        .addComponent(jRadioButtonApellido)
+                                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jTextFieldGithubOld, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                                            .addComponent(jTextFieldGithubNew, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addGap(24, 24, 24)
+                                        .addComponent(jRadioButtonDireccion))))
+                            .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                                        .addComponent(jLabelEmailOld)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextFieldApellidoOld, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextFieldApellidoNew, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(jTextFieldEmailOld, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                                        .addComponent(jLabelEmailNew, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldEmailNew)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelTelefonoOld, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabelTelefonoNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldTelefonoNew, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldTelefonoOld, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(49, 49, 49)
+                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                                        .addComponent(jLabelDireccionNew, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextFieldDireccionNew, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                                        .addComponent(jLabelDireccionOld)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextFieldDireccionOld, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap())
         );
         ajustesPersonalesLayout.setVerticalGroup(
@@ -666,63 +718,99 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelCambios)
                     .addComponent(jLabelMensajeAjustes, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButtonAlias)
+                            .addComponent(jRadioButtonNombre)))
+                    .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButtonApellido)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ajustesPersonalesLayout.createSequentialGroup()
                         .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButtonAlias)
-                            .addComponent(jTextFieldAliasOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldAliasOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelAliasOld))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldAliasNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButtonLinkedin)
-                            .addComponent(jTextFieldLinkedinOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldLinkedinNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButtonEmail)
-                            .addComponent(jTextFieldEmailOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldEmailNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldAliasNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelAliasNew)))
+                    .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                            .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextFieldNombreOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelNombreOld))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextFieldNombreNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelNombreNew)))
+                        .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                            .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextFieldApellidoOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelApellidoOld))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextFieldApellidoNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelApellidoNew)))))
+                .addGap(29, 29, 29)
+                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButtonLinkedin)
+                    .addComponent(jRadioButtonGithub))
+                .addGap(3, 3, 3)
+                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ajustesPersonalesLayout.createSequentialGroup()
-                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(ajustesPersonalesLayout.createSequentialGroup()
-                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextFieldNombreOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jRadioButtonNombre))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldNombreNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(ajustesPersonalesLayout.createSequentialGroup()
-                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextFieldApellidoOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jRadioButtonApellido))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldApellidoNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldLinkedinOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelLinkedinOld))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldLinkedinNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelLinkedinNew))
                         .addGap(18, 18, 18)
+                        .addComponent(jRadioButtonEmail))
+                    .addGroup(ajustesPersonalesLayout.createSequentialGroup()
                         .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldGithubOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButtonGithub))
+                            .addComponent(jLabelGithubOld))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldGithubNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldGithubNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelGithubNew))
                         .addGap(18, 18, 18)
                         .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ajustesPersonalesLayout.createSequentialGroup()
-                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextFieldDireccionOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jRadioButtonDireccion))
-                                .addGap(4, 4, 4)
-                                .addComponent(jTextFieldDireccionNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(ajustesPersonalesLayout.createSequentialGroup()
-                                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextFieldTelefonoOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jRadioButtonTelefono))
-                                .addGap(3, 3, 3)
-                                .addComponent(jTextFieldTelefonoNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(52, 52, 52)
+                            .addComponent(jRadioButtonDireccion)
+                            .addComponent(jRadioButtonTelefono))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldEmailOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelEmailOld))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldEmailNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelEmailNew)))
+                    .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldDireccionOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelDireccionOld))
+                        .addGap(4, 4, 4)
+                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldDireccionNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelDireccionNew)))
+                    .addGroup(ajustesPersonalesLayout.createSequentialGroup()
+                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldTelefonoOld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelTelefonoOld))
+                        .addGap(3, 3, 3)
+                        .addGroup(ajustesPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldTelefonoNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelTelefonoNew))))
+                .addGap(31, 31, 31)
                 .addComponent(jButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ajustes personales", ajustesPersonales);
@@ -760,6 +848,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButtonConectarSAXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConectarSAXActionPerformed
 
+        //Abre el fichero, habilita los botones y actualiza el combobox para que se pueda elegir un post por su id
+        
         ficheroXML = dialogoSeleccionarFichero();
         if (ficheroXML == null) {
             this.jLabelMensajeConexion.setText("Error en conexión con base de datos.");
@@ -768,7 +858,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             this.jButtonLike.setEnabled(false);
             this.jButtonPublicar.setEnabled(false);
             this.jButtonConsulta.setEnabled(false);
-            this.jButtonConsultaUsuario.setEnabled(false);
             this.jButtonModificar.setEnabled(false);
         } else {
             this.jLabelMensajeConexion.setText("¡Conexión establecida correctamente!");
@@ -777,7 +866,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             this.jButtonLike.setEnabled(true);
             this.jButtonPublicar.setEnabled(true);
             this.jButtonConsulta.setEnabled(true);
-            this.jButtonConsultaUsuario.setEnabled(true);
             this.jButtonModificar.setEnabled(true);
             actualizarComboboxItems();            
         }
@@ -787,6 +875,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButtonMostrarSAXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarSAXActionPerformed
 
+        //Muestra el contenido del archivo XML con SAX (primero prepara el SAX por si se ha cambiado algo)
+        
         if (gesSAX.preparar_SAX(ficheroXML) == -1) {
             this.jLabelMensajeSAX.setText("Error en acceso a datos.");
         } else {
@@ -797,10 +887,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButtonMostrarPostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarPostActionPerformed
 
+        //Muestra el resultado de la consulta del post seleccionado en el combobox
+        
         if (gesXPath.preparar_XPath(ficheroXML) == -1) {
             this.jLabelMensajeRevision.setText("Error en acceso a datos.");
         } else {
-            String consultaPost = "/Blog/Post[./@id=" + String.valueOf(jComboBoxId.getSelectedItem()) + "]";
+            String consultaPost = "/Blog/Post[./@id='" + String.valueOf(jComboBoxId.getSelectedItem()) + "']";
             this.jTextAreaSalidaRevision.setText(gesXPath.consultar_post(consultaPost));
         }
 
@@ -808,6 +900,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButtonLikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLikeActionPerformed
 
+        //Añade un like al post seleccionado en el combobox
+        
         if (gesJAXB.preparar_JAXB(ficheroXML) == -1) {
             this.jLabelMensajeRevision.setText("Error en acceso a datos.");
         } else {
@@ -822,6 +916,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButtonPublicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPublicarActionPerformed
 
+        //Añade un elemento Post en el archivo XML y actualiza el combobox
+        
         if (gesDOM.preparar_DOM(ficheroXML) == -1) {
             this.jLabelMensajePublicacion.setText("Error en acceso a datos.");
         } else {
@@ -844,6 +940,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButtonConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultaActionPerformed
         
+        //Realiza la consulta seleccionada con el radio button y la muestra en el text area
+        
         if (gesXPath.preparar_XPath(ficheroXML) == -1) {
             this.jLabelMensajeConsulta.setText("Error en acceso a datos.");
         } else {
@@ -860,17 +958,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             } else if(jRadioButtonNumeroPosts.isSelected()){
                 String consultaPost = "//Post";
                 this.jTextAreaSalidaConsulta.setText(gesXPath.consultar_numero_posts(consultaPost));
-            } 
-        }
-        
-    }//GEN-LAST:event_jButtonConsultaActionPerformed
-
-    private void jButtonConsultaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultaUsuarioActionPerformed
-        
-        if (gesXPath.preparar_XPath(ficheroXML) == -1) {
-            this.jLabelMensajeConsulta.setText("Error en acceso a datos.");
-        } else {
-            if(jRadioButtonNumeroPostsUsuario.isSelected()){
+            } else if(jRadioButtonNumeroPostsUsuario.isSelected()){
                 String consultaPost = "//Post";
                 this.jTextAreaSalidaConsulta.setText(gesXPath.consultar_numero_posts(consultaPost, jTextFieldUsuario.getText()));
             } else if(jRadioButtonDatosContacto.isSelected()){
@@ -882,12 +970,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             } else if(jRadioButtonTodosPostsUsuario.isSelected()){
                 String consultaPost = "//Post[./Usuario/@alias='" + jTextFieldUsuario.getText() + "']";
                 this.jTextAreaSalidaConsulta.setText(gesXPath.consultar_todos_posts(consultaPost));
-            } 
+            }
         }
         
-    }//GEN-LAST:event_jButtonConsultaUsuarioActionPerformed
+    }//GEN-LAST:event_jButtonConsultaActionPerformed
 
     private void jButtonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarActionPerformed
+        
+        //Permite modificar un elemento con el texto antiguo y el nuevo
         
         if (gesJAXB.preparar_JAXB(ficheroXML) == -1) {
             this.jLabelMensajeAjustes.setText("Error en acceso a datos.");
@@ -984,12 +1074,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel ajustesPersonales;
     private javax.swing.ButtonGroup buttonGroupCambios;
     private javax.swing.ButtonGroup buttonGroupConsulta;
-    private javax.swing.ButtonGroup buttonGroupConsultaUsuario;
     private javax.swing.JPanel consultar;
     private javax.swing.JPanel home;
     private javax.swing.JButton jButtonConectarSAX;
     private javax.swing.JButton jButtonConsulta;
-    private javax.swing.JButton jButtonConsultaUsuario;
     private javax.swing.JButton jButtonLike;
     private javax.swing.JButton jButtonModificar;
     private javax.swing.JButton jButtonMostrarPost;
@@ -997,14 +1085,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPublicar;
     private javax.swing.JComboBox<String> jComboBoxId;
     private javax.swing.JLabel jLabelAlias;
+    private javax.swing.JLabel jLabelAliasNew;
+    private javax.swing.JLabel jLabelAliasOld;
     private javax.swing.JLabel jLabelApellido;
+    private javax.swing.JLabel jLabelApellidoNew;
+    private javax.swing.JLabel jLabelApellidoOld;
     private javax.swing.JLabel jLabelCambios;
     private javax.swing.JLabel jLabelConsulta;
     private javax.swing.JLabel jLabelDireccion;
+    private javax.swing.JLabel jLabelDireccionNew;
+    private javax.swing.JLabel jLabelDireccionOld;
     private javax.swing.JLabel jLabelEmail;
+    private javax.swing.JLabel jLabelEmailNew;
+    private javax.swing.JLabel jLabelEmailOld;
     private javax.swing.JLabel jLabelFecha;
     private javax.swing.JLabel jLabelGithub;
+    private javax.swing.JLabel jLabelGithubNew;
+    private javax.swing.JLabel jLabelGithubOld;
     private javax.swing.JLabel jLabelLinkedin;
+    private javax.swing.JLabel jLabelLinkedinNew;
+    private javax.swing.JLabel jLabelLinkedinOld;
     private javax.swing.JLabel jLabelMensajeAjustes;
     private javax.swing.JLabel jLabelMensajeConexion;
     private javax.swing.JLabel jLabelMensajeConsulta;
@@ -1012,7 +1112,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelMensajeRevision;
     private javax.swing.JLabel jLabelMensajeSAX;
     private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelNombreNew;
+    private javax.swing.JLabel jLabelNombreOld;
     private javax.swing.JLabel jLabelTelefono;
+    private javax.swing.JLabel jLabelTelefonoNew;
+    private javax.swing.JLabel jLabelTelefonoOld;
     private javax.swing.JLabel jLabelTema;
     private javax.swing.JLabel jLabelTexto;
     private javax.swing.JLabel jLabelTitulo;
@@ -1072,7 +1176,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel publicar;
     private javax.swing.JPanel revisar;
     // End of variables declaration//GEN-END:variables
-
+    /**
+     * @see Abre el fichero seleccionado.
+     * @return Fichero seleccionado.
+     */
     private File dialogoSeleccionarFichero() {
 
         File fichero = null;
@@ -1107,7 +1214,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         return null;
     }
-
+    /**
+     * @see Actualiza jComboBoxId para que tenga el mismo número de elementos que el número de posts en el blog.
+     */
     private void actualizarComboboxItems() {
         
         if (gesDOM.preparar_DOM(ficheroXML) == -1) {
