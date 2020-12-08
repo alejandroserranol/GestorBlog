@@ -92,21 +92,19 @@ public class Gestionar_DOM {
         String id = String.valueOf(contarPosts() + 1);
         String likes = "0";
         
-        int contador = 0;
-        while(contador<4){
-            switch(contador){
-                //Añado los primeros en un switch porque algunos atributos no están en el array _campos
-                case 0: auxiliar[contador] = id; contador++; break;
-                case 1: auxiliar[contador] = _campos[0]; contador++; break;
-                case 2: auxiliar[contador] = _campos[1]; contador++; break;
-                case 3: auxiliar[contador] = likes; contador++; break;
-                default: break;
-            }
-        }
+        
 
-        for(int i=2; i<auxiliar.length-2; i++){
-            auxiliar[contador] = _campos[i];
-            contador++;
+        for(int i=0; i<auxiliar.length; i++){
+            if(i==0){
+                auxiliar[i] = _campos[i];
+            } else if(i==1){
+                auxiliar[i] = id;
+            } else if(i==2){
+                auxiliar[i] = likes;
+            } else {
+                //el array campos tiene dos elementos menos que auxiliar
+                auxiliar[i] = _campos[i-2];
+            }
         }
       
         return auxiliar;
@@ -184,14 +182,15 @@ public class Gestionar_DOM {
         nusuario.appendChild(ndatosContacto);
         
         Node npost = doc.createElement("Post");
-        ((Element)npost).setAttribute("id", _elementosOrdenados[apuntador]);
-        apuntador--;
+        apuntador = 0;
         ((Element)npost).setAttribute("fecha", _elementosOrdenados[apuntador]);
-        apuntador--;
-        ((Element)npost).setAttribute("tema", _elementosOrdenados[apuntador]);
-        apuntador--;
+        apuntador++;
+        ((Element)npost).setAttribute("id", _elementosOrdenados[apuntador]);
+        apuntador++;
         ((Element)npost).setAttribute("likes", _elementosOrdenados[apuntador]);
-        apuntador--;
+        apuntador++;
+        ((Element)npost).setAttribute("tema", _elementosOrdenados[apuntador]);
+        apuntador++;
         
         npost.appendChild(nusuario);
         npost.appendChild(nTitulo);

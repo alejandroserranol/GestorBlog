@@ -57,10 +57,10 @@ public class Gestionar_XPath {
 
     }
 
-    String consultar_post(String _consulta) {
+    public String consultar_post(String _consulta) {
 
         String cadena_resultado = "";
-        
+
         String datos_post[] = null;
 
         try {
@@ -69,28 +69,28 @@ public class Gestionar_XPath {
 
             Object resultado = exp.evaluate(doc, XPathConstants.NODE);
             Node nodoPost = (Node) resultado;
-            
+
             datos_post = procesarPost(nodoPost);
 
             int auxiliar = 0;
-            while(auxiliar<datos_post.length){
-                switch(auxiliar){
+            while (auxiliar < datos_post.length) {
+                switch (auxiliar) {
                     //Los primeros atributos están desordenados.
-                    case 0: cadena_resultado += "En fecha: " + datos_post[auxiliar] + "\t";break;
-                    case 1: cadena_resultado += "Id: " + datos_post[auxiliar] + "\t";break;
-                    case 2: cadena_resultado += "Número de likes: " + datos_post[auxiliar] + "\t";break;
-                    case 3: cadena_resultado += "Tema : " + datos_post[auxiliar] + "\n\n";break;
-                    case 4: cadena_resultado += "Usuario: " + datos_post[auxiliar] + "\n\nDatos personales:\n";break;
-                    case 5: cadena_resultado += "\n\tNombre:\t" + datos_post[auxiliar];break;
-                    case 6: cadena_resultado += "\n\tApellido:\t" + datos_post[auxiliar]+"\n\tRedes sociales:\t";break;
-                    case 7: cadena_resultado += "\n\t\tLinkedin:\t" + datos_post[auxiliar];break;
-                    case 8: cadena_resultado += "\n\t\tGithub:\t" + datos_post[auxiliar]+"\n\tDatos de contacto:\t";break;
-                    case 9: cadena_resultado += "\n\t\tEmail:\t"+ datos_post[auxiliar];break;
-                    case 10:cadena_resultado += "\n\t\tTelefono:\t" + datos_post[auxiliar];break;
-                    case 11:cadena_resultado += "\n\t\tDireccion\t" + datos_post[auxiliar];break;
-                    case 12:cadena_resultado += "\nTitulo:\t" + datos_post[auxiliar];break;
-                    case 13:cadena_resultado += "\nTexto:\t" + datos_post[auxiliar];break;
-                    default:break;
+                    case 0: cadena_resultado += "En fecha: " + datos_post[auxiliar] + "\t"; break;
+                    case 1: cadena_resultado += "Id: " + datos_post[auxiliar] + "\t"; break;
+                    case 2: cadena_resultado += "Número de likes: " + datos_post[auxiliar] + "\t"; break;
+                    case 3: cadena_resultado += "Tema : " + datos_post[auxiliar] + "\n\n"; break;
+                    case 4: cadena_resultado += "Usuario: " + datos_post[auxiliar] + "\n\nDatos personales:\n"; break;
+                    case 5: cadena_resultado += "\n\tNombre:\t" + datos_post[auxiliar]; break;
+                    case 6: cadena_resultado += "\n\tApellido:\t" + datos_post[auxiliar] + "\n\tRedes sociales:\t"; break;
+                    case 7: cadena_resultado += "\n\t\tLinkedin:\t" + datos_post[auxiliar]; break;
+                    case 8: cadena_resultado += "\n\t\tGithub:\t" + datos_post[auxiliar] + "\n\tDatos de contacto:\t"; break;
+                    case 9: cadena_resultado += "\n\t\tEmail:\t" + datos_post[auxiliar]; break;
+                    case 10: cadena_resultado += "\n\t\tTelefono:\t" + datos_post[auxiliar]; break;
+                    case 11: cadena_resultado += "\n\t\tDireccion\t" + datos_post[auxiliar]; break;
+                    case 12: cadena_resultado += "\nTitulo:\t" + datos_post[auxiliar]; break;
+                    case 13: cadena_resultado += "\nTexto:\t" + datos_post[auxiliar]; break;
+                    default: break;
                 }
                 auxiliar++;
             }
@@ -112,7 +112,7 @@ public class Gestionar_XPath {
         String datosUsuario[] = null;
 
         //Atributos de <Post>
-        for(int i=0; i<nodoPost.getAttributes().getLength(); i++){
+        for (int i = 0; i < nodoPost.getAttributes().getLength(); i++) {
             datos[contador] = nodoPost.getAttributes().item(i).getNodeValue();
             contador++;
         }
@@ -184,65 +184,242 @@ public class Gestionar_XPath {
         return datos;
     }
 
-    public String consultar_usuarios(String _consulta) {
+    public String consultar_atributos(String _consulta) {
+
+        String cadena_resultado = "";
+        ArrayList<String> atributos = new ArrayList<>();
+        int numeroUsuario = 1;
+
+        try {
+            XPathExpression exp = xpath.compile(_consulta);
+            Object resultado = exp.evaluate(doc, XPathConstants.NODESET);
+            NodeList listaNodos = (NodeList) resultado;
+
+            for (int i = 0; i < listaNodos.getLength(); i++) {
+                if (!atributos.contains(listaNodos.item(i).getNodeValue())) {
+                    atributos.add(listaNodos.item(i).getNodeValue());
+                }
+            }
+
+            for (String atributo : atributos) {
+                cadena_resultado += "Usuario " + numeroUsuario + ":\t" + atributo + "\n";
+                numeroUsuario++;
+            }
+
+        } catch (XPathExpressionException ex) {
+            Logger.getLogger(Gestionar_XPath.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return cadena_resultado;
+    }
+
+    public int buscar_post_mas_popular() {
+        int id = 1;
+        int likesNodoActual = 0;
+        int likesNodoSiguiente = 0;
+        String consulta = "//@likes";
+
+        try {
+            XPathExpression exp = xpath.compile(consulta);
+            Object resultado = exp.evaluate(doc, XPathConstants.NODESET);
+            NodeList listaNodos = (NodeList) resultado;
+
+            for (int i = 0; i < listaNodos.getLength() - 1; i++) {
+                likesNodoActual = Integer.parseInt(listaNodos.item(i).getNodeValue());
+                likesNodoSiguiente = Integer.parseInt(listaNodos.item(i + 1).getNodeValue());
+                if (likesNodoActual < likesNodoSiguiente) {
+                    id = i + 2;
+                }
+            }
+
+        } catch (XPathExpressionException ex) {
+            Logger.getLogger(Gestionar_XPath.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return id;
+    }
+
+    public String consultar_numero_posts(String _consulta) {
+
+        String cadena_resultado = "Número de posts en el blog:\t";
+        int contador = 0;
+
+        try {
+            XPathExpression exp = xpath.compile(_consulta);
+            Object resultado = exp.evaluate(doc, XPathConstants.NODESET);
+            NodeList listaNodos = (NodeList) resultado;
+
+            for (int i = 0; i < listaNodos.getLength(); i++) {
+                contador++;
+            }
+
+            cadena_resultado += String.valueOf(contador);
+
+        } catch (XPathExpressionException ex) {
+            Logger.getLogger(Gestionar_XPath.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return cadena_resultado;
+    }
+
+    String consultar_numero_posts(String _consulta, String _alias) {
+        String cadena_resultado = "Número de posts en el blog:\t";
+        int contador = 0;
+        NodeList listaHijosDePost = null;
+        Node hijoDePost = null;
+
+        try {
+            XPathExpression exp = xpath.compile(_consulta);
+            Object resultado = exp.evaluate(doc, XPathConstants.NODESET);
+            NodeList listaNodos = (NodeList) resultado;
+
+            for (int i = 0; i < listaNodos.getLength(); i++) {
+
+                listaHijosDePost = listaNodos.item(i).getChildNodes();
+
+                for (int j = 0; j < listaHijosDePost.getLength(); j++) {
+                    hijoDePost = listaHijosDePost.item(j);
+                    if (hijoDePost.getNodeType() == Node.ELEMENT_NODE && hijoDePost.getNodeName().equals("Usuario")) {
+                        if (hijoDePost.getAttributes().item(0).getNodeValue().equals(_alias)) {
+                            contador++;
+                        }
+                    }
+                }
+
+            }
+
+            cadena_resultado += String.valueOf(contador);
+
+        } catch (XPathExpressionException ex) {
+            Logger.getLogger(Gestionar_XPath.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return cadena_resultado;
+    }
+
+    public String consultar_informacion_usuario(String _consulta, String _datosUsuario) {
+        String cadena_resultado = "";
+        int apuntador = 0;
+        String datosContacto[] = { "\tEmail:\t", "\tTeléfono:\t", "\tDirección:\t" };
+        String redesSociales[] = { "\tLinkedin:\t", "\tGithub:\t" };
+        Node usuario = null;
+        boolean isNodoUsuarioCreado = false;
+        NodeList listaHijosDeUsuario = null;
+        Node hijoDeUsuario = null;
+
+        NodeList listaAuxiliar = null;
+        Node auxiliar = null;
+
+        try {
+            XPathExpression exp = xpath.compile(_consulta);
+            Object resultado = exp.evaluate(doc, XPathConstants.NODESET);
+            NodeList listaNodos = (NodeList) resultado;
+
+            for (int i = 0; i < listaNodos.getLength(); i++) {
+                if (listaNodos.item(i).getNodeType() == Node.ELEMENT_NODE && !isNodoUsuarioCreado) {
+                    //Solo necesito un nodo (la información se repite en todos)
+                    usuario = listaNodos.item(i);
+                    isNodoUsuarioCreado = true;
+
+                    if (_datosUsuario.equals("DatosContacto")) {
+                        cadena_resultado += "Datos de contacto:\n";
+                        listaHijosDeUsuario = usuario.getChildNodes();
+                        for (int j = 0; j < listaHijosDeUsuario.getLength(); j++) {
+                            hijoDeUsuario = listaHijosDeUsuario.item(j);
+                            if (hijoDeUsuario.getNodeType() == Node.ELEMENT_NODE && hijoDeUsuario.getNodeName().equals(_datosUsuario)) {
+                                listaAuxiliar = hijoDeUsuario.getChildNodes();
+                                for (int k = 0; k < listaAuxiliar.getLength(); k++) {
+                                    auxiliar = listaAuxiliar.item(k);
+                                    //Email, telefono dirección
+                                    if (auxiliar.getNodeType() == Node.ELEMENT_NODE) {
+                                        datosContacto[apuntador] += auxiliar.getChildNodes().item(0).getNodeValue() + "\n";
+                                        apuntador++;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        for(String dato: datosContacto){
+                            cadena_resultado += dato;
+                        }
+                    } else if (_datosUsuario.equals("RedesSociales")) {
+                        cadena_resultado += "Redes sociales:\n";
+                        listaHijosDeUsuario = usuario.getChildNodes();
+                        for (int j = 0; j < listaHijosDeUsuario.getLength(); j++) {
+                            hijoDeUsuario = listaHijosDeUsuario.item(j);
+                            if (hijoDeUsuario.getNodeType() == Node.ELEMENT_NODE && hijoDeUsuario.getNodeName().equals(_datosUsuario)) {
+                                listaAuxiliar = hijoDeUsuario.getChildNodes();
+                                for (int k = 0; k < listaAuxiliar.getLength(); k++) {
+                                    auxiliar = listaAuxiliar.item(k);
+                                    //Linkedin y Github
+                                    if (auxiliar.getNodeType() == Node.ELEMENT_NODE) {
+                                        redesSociales[apuntador] +=  auxiliar.getChildNodes().item(0).getNodeValue() + "\n";
+                                        apuntador++;
+                                    }
+                                }
+                            }
+                        }
+                        for(String red: redesSociales){
+                            cadena_resultado += red;
+                        }
+                    }
+                }
+            }
+
+        } catch (XPathExpressionException ex) {
+            Logger.getLogger(Gestionar_XPath.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return cadena_resultado;
+    }
+
+    public String consultar_todos_posts(String _consulta) {
         
         String cadena_resultado = "";
-        ArrayList<String> usuarios = new ArrayList<>();
-        int numeroUsuario = 1;
-        
+        String datos_post[] = null;
+
         try {
             XPathExpression exp = xpath.compile(_consulta);
             Object resultado = exp.evaluate(doc, XPathConstants.NODESET);
             NodeList listaNodos = (NodeList) resultado;
             
-            for(int i=0; i<listaNodos.getLength();i++){
-                if(!usuarios.contains(listaNodos.item(i).getNodeValue())){
-                    usuarios.add(listaNodos.item(i).getNodeValue());
-                }                
+            for(int i=0;i<listaNodos.getLength();i++){
+                datos_post = procesarPost(listaNodos.item(i));
+                int auxiliar = 0;
+                while (auxiliar < datos_post.length) {
+                    switch (auxiliar) {
+                        //Los primeros atributos están desordenados.
+                        case 0: cadena_resultado += "En fecha: " + datos_post[auxiliar] + "\t"; break;
+                        case 1: cadena_resultado += "Id: " + datos_post[auxiliar] + "\t"; break;
+                        case 2: cadena_resultado += "Número de likes: " + datos_post[auxiliar] + "\t"; break;
+                        case 3: cadena_resultado += "Tema : " + datos_post[auxiliar] + "\n\n"; break;
+                        case 4: cadena_resultado += "Usuario: " + datos_post[auxiliar] + "\n\nDatos personales:\n"; break;
+                        case 5: cadena_resultado += "\n\tNombre:\t" + datos_post[auxiliar]; break;
+                        case 6: cadena_resultado += "\n\tApellido:\t" + datos_post[auxiliar] + "\n\tRedes sociales:\t"; break;
+                        case 7: cadena_resultado += "\n\t\tLinkedin:\t" + datos_post[auxiliar]; break;
+                        case 8: cadena_resultado += "\n\t\tGithub:\t" + datos_post[auxiliar] + "\n\tDatos de contacto:\t"; break;
+                        case 9: cadena_resultado += "\n\t\tEmail:\t" + datos_post[auxiliar]; break;
+                        case 10: cadena_resultado += "\n\t\tTelefono:\t" + datos_post[auxiliar]; break;
+                        case 11: cadena_resultado += "\n\t\tDireccion\t" + datos_post[auxiliar]; break;
+                        case 12: cadena_resultado += "\nTitulo:\t" + datos_post[auxiliar]; break;
+                        case 13: cadena_resultado += "\nTexto:\t" + datos_post[auxiliar]; break;
+                        default: break;
+                    }
+                    auxiliar++;
+                }
+                cadena_resultado += "\n----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
             }
-            
-            for(String usuario: usuarios){
-                cadena_resultado += "Usuario "+ numeroUsuario + ":\t" + usuario + "\n";
-                numeroUsuario++;
-            }
-            
+
+
         } catch (XPathExpressionException ex) {
             Logger.getLogger(Gestionar_XPath.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        return cadena_resultado;
-    }
 
-    String consultar_temas(String _consulta) {
-        
-        
-        String cadena_resultado = "";
-        ArrayList<String> temas = new ArrayList<>();
-        int numeroUsuario = 1;
-        
-        try {
-            XPathExpression exp = xpath.compile(_consulta);
-            Object resultado = exp.evaluate(doc, XPathConstants.NODESET);
-            NodeList listaNodos = (NodeList) resultado;
-            
-            for(int i=0; i<listaNodos.getLength();i++){
-                if(!temas.contains(listaNodos.item(i).getNodeValue())){
-                    temas.add(listaNodos.item(i).getNodeValue());
-                }                
-            }
-            
-            for(String tema: temas){
-                cadena_resultado += "Tema "+ numeroUsuario + ":\t" + tema + "\n";
-                numeroUsuario++;
-            }
-            
-        } catch (XPathExpressionException ex) {
-            Logger.getLogger(Gestionar_XPath.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
         return cadena_resultado;
+        
     }
-
 }
+
+
+            
+            
+                
